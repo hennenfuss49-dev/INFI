@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mittelwerte und Standardabweichung</title>
+    <script>
+        function beschrifte(){
+            var p = document.getElementById("r").value;
+            document.getElementById("b").value = "Eingabe der " + p + " Werte";
+            document.getElementById("a").innerHTML = "";
+        }
+
+        function init(){
+            document.getElementById("r").value = 2;
+        }
+
+        function eingabe(){
+            document.getElementById("a").innerHTML = "";
+            n = document.getElementById("r").value; // global variable (ohne var vereinbart)
+            x = []; // global array (ohne var vereinbart, es koennen verwendet werden: x[0], x[1], x[2],...)
+            for(let i = 0; i < n; i++){
+                x[i] = parseFloat(prompt((i+1) + ".Wert: "));
+                document.getElementById("a").innerHTML += x[i] + "<br/>"
+            }
+        }
+
+        function berechne(){
+            var m = 0;
+            for(var i = 0; i < n; i++){
+                m += x[i];
+            }
+            m = m/n;
+            document.getElementById("a").innerHTML += "<br/>" + "Mittelwert m = " + m;
+            var s = 0;
+            for(var i = 0; i < n; i++){
+                s = s+(x[i]-m) * (x[i] - m);
+            }
+            s = Math.sqrt(s/(n-1));
+            document.getElementById("a").innerHTML += "<br/>" + "Standardabweichung s = " + s;
+        }
+    </script>
+</head>
+<body onload="init()">
+    <h1><u>Mittelwerte und Standardabweichung</u></h1>
+    <p>
+        <input type="range" id="r" min="2" max="15" value="2" oninput="beschrifte()">
+        <input type="button" id="b" value="Eingabe der 2 Werte" onclick="eingabe()">
+        <input type="button" value="Mittelwert und Standardabweichung" onclick="berechne()">
+    </p>
+    <p id="a"></p>
+</body>
+</html>

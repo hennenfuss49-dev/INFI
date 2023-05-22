@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widerstaende</title>
+</head>
+<body onload="init()">
+    <h1>Widerstaende</h1>
+    <table>
+        <tr>
+            <td>R<sub>1</sub> = </td>
+            <td><input type="text" placeholder="R1" id="inpR1" oninput="delte()" > &Omega;</td>
+        </tr>
+        <tr>
+            <td>R<sub>2</sub> = </td>
+            <td><input type="text" placeholder="R2" id="inpR2" oninput="delte()"> &Omega;</td>
+        </tr>
+        <tr>
+            <td>R<sub>3</sub> = </td>
+            <td><input type="text" placeholder="R3" id="inpR3" oninput="delte()"> &Omega;</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="r" id="rbtnR1" onclick="label('R1 + R2 + R3')"></td>
+            <td>R1 + R2 + R3</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="r" id="rbtnR2" onclick="label('R1 || R2 || R3')""></td>
+            <td>R1 || R2 || R3</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="r" id="rbtnR3" onclick="label('R1 + (R2 || R3)')"></td>
+            <td>R1 + (R2 || R3)</td>
+        </tr>
+    </table>
+    <button id="btnCalc" onclick="calc()">Berechne</button>
+    <h2 id="header"></h2>
+    <p id="output"></p>
+    <script src="script.js"></script>
+</body>
+</html>

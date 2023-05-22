@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Beispiel-2</title>
+</head>
+<body>
+    <h1><u>Gesamtwiderstand</u></h1>
+    <div style="margin: 50px;"></div>
+    <p>
+        R<sub>1</sub>
+        <input type="number" id="inpR_1">
+        <span>&#8486;</span>
+    </p>
+    <p>
+        R<sub>2</sub>
+        <input type="number" id="inpR_2">
+        <span>&#8486;</span>
+    </p>
+    <p>
+        R<sub>3</sub>
+        <input type="number" id="inpR_3">
+        <span>&#8486;</span>
+    </p>
+    <button id="btnSeries">R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub></button>
+    <button id="btnPara">R<sub>1</sub> || R<sub>2</sub> || R<sub>3</sub></button>
+    <button id="btnMix">R<sub>1</sub> + (R<sub>2</sub> || R<sub>3</sub>)</button>
+    <p id="output"></p>
+    <script src="script.js"></script>
+</body>
+</html>

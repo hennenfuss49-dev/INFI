@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Rechtwinkliges Dreieck</title>
+</head>
+<body onload="init()">
+    <h1>Rechtwinkliges Dreieck</h1>
+    <table>
+        <tr>
+            <td><input type="radio" name="r" id="rbtn1" onclick="label()"></td>
+            <td>a und b</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="r" id="rbtn2" onclick="label()"></td>
+            <td>a und c</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="r" id="rbtn3" onclick="label()"></td>
+            <td>b und c</td>
+        </tr>
+        <tr>
+            <td id="inpLabel1">a = </td>
+            <td><input type="number" id="inp1" oninput="delte()" ></td>
+        </tr>
+        <tr>
+            <td id="inpLabel2">b = </td>
+            <td><input type="number" id="inp2" oninput="delte()"></td>
+        </tr>
+        <tr>
+            <td><button id="btnCalc" onclick="calc()">Berechnen</button></td>
+        </tr>
+    </table>
+    <p id="output"></p>
+    <script src="script.js"></script>
+</body>
+</html>

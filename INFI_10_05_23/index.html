@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zahlenraten</title>
+    <script>
+        function init(){
+            document.getElementById("r").value = 50
+            document.getElementById("b").value = "Versuche 50"
+            document.getElementById("output").value = ""
+
+            randomNumber = Math.round(100* Math.random());
+            //alert(randomNumber)
+        }
+
+        function label(){
+            let rangeValue = document.getElementById("r").value
+            document.getElementById("b").value = "Versuche " + rangeValue
+        }
+
+        function bewerte(){
+            let rangeValue = document.getElementById("r").value
+            if(rangeValue < randomNumber) 
+                document.getElementById("output").innerHTML += rangeValue + " zu klein </br>"
+            else if(rangeValue > randomNumber)
+                document.getElementById("output").innerHTML += rangeValue + " zu gross </br>"
+            else{
+                document.getElementById("output").innerHTML += rangeValue + " ist richtig </br>"
+                document.getElementById("b").value = "neues Spiel"
+                document.getElementById("b").addEventListener('click', (e) =>{
+                    init();
+                })
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+    <h1>Zahlenraten</h1>
+    <p>
+        <input type="range" id="r" min="1" max="100" style="width: 215px;" oninput="label()">
+    </p>
+    <p>
+        <input type="button" id="b" style="width: 215px; height: 70px; font-size: 30px;" onclick="bewerte()">
+    </p>
+    <p id="output" style="font-size: 25px;">
+
+    </p>
+</body>
+</html>
